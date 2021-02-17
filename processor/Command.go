@@ -6,14 +6,6 @@ import (
 	"os/exec"
 )
 
-//type Tools struct {
-//	Tools map[string]ToolCmd
-//}
-//
-//func (t *Tools) RegisterTool(tool ToolCmd)  {
-//	t.Tools[tool.Id] = tool
-//}
-
 type ToolCmd struct{
 	Id  string
 	run func()
@@ -22,6 +14,9 @@ type ToolCmd struct{
 func (tool *ToolCmd) Execute() {
 	tool.run()
 }
+
+// internationalization
+// https://phrase.com/blog/posts/internationalization-i18n-go/
 
 func (tool *ToolCmd) Info() string{
 	return tool.Id
