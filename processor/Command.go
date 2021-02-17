@@ -16,8 +16,10 @@ func (tool *ToolCmd) Execute() {
 }
 
 // internationalization
+// https://pkg.go.dev/github.com/cloudfoundry-attic/jibber_jabber
 // https://phrase.com/blog/posts/internationalization-i18n-go/
 
+// alternative: https://github.com/kataras/i18n
 func (tool *ToolCmd) Info() string{
 	return tool.Id
 }
