@@ -19,3 +19,14 @@ It also supports the development of local tools, which instead of call a remote 
 If we need to develop a new tool it can be done inside this project.
 
 One sample tool is available to server as example.
+
+## Install
+
+1. On project run `go build`
+2. Copy the build file `sumatools` to your suma/uyuni server
+3. Have fun
+
+## TODO
+- Add description for each tool
+    - preference using internationalization
+- Add type to store all available commands and control order in which help are printed
