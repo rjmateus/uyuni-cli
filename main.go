@@ -19,6 +19,7 @@ var commands = map[string]processor.ToolCmd{
 	"spacewalk-sql": processor.RemoteToolCommand("spacewalk-sql", "/usr/bin/spacewalk-sql"),
 	"spacewalk-repo-sync": processor.RemoteToolCommand("spacewalk-repo-sync", "/usr/bin/spacewalk-repo-sync"),
 	"satpasswd": processor.RemoteToolCommand("satpasswd", "/usr/bin/satpasswd"),
+	"spacecmd": processor.RemoteToolCommand("spacecmd", "/usr/bin/spacecmd"),
 	"newTool": processor.LocalToolCommand("newTool", newTool.ProcessNewTool),
 }
 
@@ -43,5 +44,5 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println("My work in here is done!!")
+	fmt.Println("Goodbye!!")
 }
