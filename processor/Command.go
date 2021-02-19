@@ -25,12 +25,12 @@ func (tool *toolCmd) Info() string{
 }
 
 
-func remoteToolCommand(id string, execPath string) toolCmd {
+func externalToolCommand(id string, execPath string) toolCmd {
 	return toolCmd{Id:id,
 		run: func() {runCommand(execPath)	}}
 }
 
-func localToolCommand(id string, ft func()) toolCmd {
+func internalToolCommand(id string, ft func()) toolCmd {
 	return toolCmd{Id:id, run: ft}
 }
 

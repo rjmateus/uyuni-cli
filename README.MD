@@ -22,7 +22,7 @@ One sample tool is available to server as example.
 
 ## Install
 
-1. On project run `go build`
+1. On project run `go build -o uyuni`
 2. Copy the build file `sumatools` to your suma/uyuni server
 3. Have fun
 

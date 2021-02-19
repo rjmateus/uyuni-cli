@@ -2,13 +2,13 @@ package processor
 
 import (
 	"fmt"
-	"github.com/rmateus/sumatools/newTool"
+	"github.com/rmateus/uyuni-cli/newTool"
 	"os"
 )
 
 const (
 	usage = `SUMA tools 
-Usage should be "sumatools [command]"
+Usage should be "uyuni-cli [command]"
 
 Available Command:`
 )
@@ -42,10 +42,10 @@ func (manager *ToolsCommandManager) registerTool(tool toolCmd) {
 
 func GetToolsCommandManager() ToolsCommandManager {
 	manager := ToolsCommandManager{make([]string,0), make(map[string]toolCmd)}
-	manager.registerTool(remoteToolCommand("spacewalk-sql", "/usr/bin/spacewalk-sql"))
-	manager.registerTool(remoteToolCommand("spacewalk-repo-sync", "/usr/bin/spacewalk-repo-sync"))
-	manager.registerTool(remoteToolCommand("satpasswd", "/usr/bin/satpasswd"))
-	manager.registerTool(remoteToolCommand("spacecmd", "/usr/bin/spacecmd"))
-	manager.registerTool(localToolCommand("newTool", newTool.ProcessNewTool))
+	manager.registerTool(externalToolCommand("spacewalk-sql", "/usr/bin/spacewalk-sql"))
+	manager.registerTool(externalToolCommand("spacewalk-repo-sync", "/usr/bin/spacewalk-repo-sync"))
+	manager.registerTool(externalToolCommand("satpasswd", "/usr/bin/satpasswd"))
+	manager.registerTool(externalToolCommand("spacecmd", "/usr/bin/spacecmd"))
+	manager.registerTool(internalToolCommand("newTool", newTool.ProcessNewTool))
 	return manager
 }
