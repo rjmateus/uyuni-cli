@@ -33,4 +33,4 @@ One sample tool is available to server as example.
 
 # DEMO
 
-[![asciicast](https://asciinema.org/a/XAsNWxiSAXvzBOvddpqdgtWnM.svg)](https://asciinema.org/a/XAsNWxiSAXvzBOvddpqdgtWnM)
+[![asciicast](https://asciinema.org/a/SrgBVVvoQUklbbbVSbGE3vtod.svg)](https://asciinema.org/a/SrgBVVvoQUklbbbVSbGE3vtod)
