@@ -23,13 +23,11 @@ One sample tool is available to server as example.
 ## Install
 
 1. On project run `go build -o uyuni`
-2. Copy the build file `sumatools` to your suma/uyuni server
+2. Copy the build file `uyuni` to your suma/uyuni server
 3. Have fun
 
 ## TODO
-- Add description for each tool
-    - preference using internationalization
-- Add type to store all available commands and control order in which help are printed
+- Use internationalization in the tool description
 
 # DEMO
 
