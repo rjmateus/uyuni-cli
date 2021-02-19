@@ -30,3 +30,7 @@ One sample tool is available to server as example.
 - Add description for each tool
     - preference using internationalization
 - Add type to store all available commands and control order in which help are printed
+
+# DEMO
+
+[![asciicast](https://asciinema.org/a/XAsNWxiSAXvzBOvddpqdgtWnM.svg)](https://asciinema.org/a/XAsNWxiSAXvzBOvddpqdgtWnM)
