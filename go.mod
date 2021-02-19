@@ -1,3 +1,3 @@
-module github.com/rmateus/sumatools
+module github.com/rmateus/uyuni-cli
 
 go 1.13
