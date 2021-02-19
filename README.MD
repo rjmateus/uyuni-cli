@@ -1,6 +1,6 @@
 # Suma/UYUNI tools wrapper
 
-Goal is to provide a single pain of glass to call all existing suma/Uyuni command line tools.
+Goal is to provide a single pane of glass to call all existing suma/Uyuni command line tools.
 Currently we have several tools without any name convention and is hard to find them all and what they do.
 
 The project provides a wrapper to call those tools, and we can have an overlook of what tools exists.
