@@ -44,8 +44,11 @@ func GetToolsCommandManager() ToolsCommandManager {
 	manager := ToolsCommandManager{make([]string,0), make(map[string]toolCmd)}
 	manager.registerTool(externalToolCommand("spacewalk-sql", "/usr/bin/spacewalk-sql"))
 	manager.registerTool(externalToolCommand("spacewalk-repo-sync", "/usr/bin/spacewalk-repo-sync"))
+	manager.registerTool(externalToolCommand("spacewalk-debug", "/usr/bin/spacewalk-debug"))
 	manager.registerTool(externalToolCommand("satpasswd", "/usr/bin/satpasswd"))
 	manager.registerTool(externalToolCommand("spacecmd", "/usr/bin/spacecmd"))
+	manager.registerTool(externalToolCommand("satwho", "/usr/bin/satwho"))
+	manager.registerTool(externalToolCommand("satcon-deploy-tree.pl", "/usr/bin/satcon-deploy-tree.pl"))
 	manager.registerTool(internalToolCommand("newTool", newTool.ProcessNewTool))
 	return manager
 }
