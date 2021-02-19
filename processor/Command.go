@@ -6,12 +6,12 @@ import (
 	"os/exec"
 )
 
-type ToolCmd struct{
+type toolCmd struct{
 	Id  string
 	run func()
 }
 
-func (tool *ToolCmd) Execute() {
+func (tool toolCmd) Execute() {
 	tool.run()
 }
 
@@ -20,18 +20,18 @@ func (tool *ToolCmd) Execute() {
 // https://phrase.com/blog/posts/internationalization-i18n-go/
 
 // alternative: https://github.com/kataras/i18n
-func (tool *ToolCmd) Info() string{
+func (tool *toolCmd) Info() string{
 	return tool.Id
 }
 
 
-func RemoteToolCommand(id string, execPath string) ToolCmd {
-	return ToolCmd{Id:id,
+func remoteToolCommand(id string, execPath string) toolCmd {
+	return toolCmd{Id:id,
 		run: func() {runCommand(execPath)	}}
 }
 
-func LocalToolCommand(id string, ft func()) ToolCmd {
-	return ToolCmd{Id:id, run: ft}
+func localToolCommand(id string, ft func()) toolCmd {
+	return toolCmd{Id:id, run: ft}
 }
 
 func runCommand(command string)  {
