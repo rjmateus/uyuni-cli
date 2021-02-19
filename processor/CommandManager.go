@@ -42,13 +42,13 @@ func (manager *ToolsCommandManager) registerTool(tool toolCmd) {
 
 func GetToolsCommandManager() ToolsCommandManager {
 	manager := ToolsCommandManager{make([]string,0), make(map[string]toolCmd)}
-	manager.registerTool(externalToolCommand("spacewalk-sql", "/usr/bin/spacewalk-sql"))
-	manager.registerTool(externalToolCommand("spacewalk-repo-sync", "/usr/bin/spacewalk-repo-sync"))
-	manager.registerTool(externalToolCommand("spacewalk-debug", "/usr/bin/spacewalk-debug"))
-	manager.registerTool(externalToolCommand("satpasswd", "/usr/bin/satpasswd"))
-	manager.registerTool(externalToolCommand("spacecmd", "/usr/bin/spacecmd"))
-	manager.registerTool(externalToolCommand("satwho", "/usr/bin/satwho"))
-	manager.registerTool(externalToolCommand("satcon-deploy-tree.pl", "/usr/bin/satcon-deploy-tree.pl"))
-	manager.registerTool(internalToolCommand("newTool", newTool.ProcessNewTool))
+	manager.registerTool(externalToolCommand("spacewalk-sql", "/usr/bin/spacewalk-sql", "execute sql command directly on database"))
+	manager.registerTool(externalToolCommand("spacewalk-repo-sync", "/usr/bin/spacewalk-repo-sync", "start repository synchronization"))
+	manager.registerTool(externalToolCommand("spacewalk-debug", "/usr/bin/spacewalk-debug", "export debug information"))
+	manager.registerTool(externalToolCommand("satpasswd", "/usr/bin/satpasswd", "reset user password"))
+	manager.registerTool(externalToolCommand("spacecmd", "/usr/bin/spacecmd", "command line tool to perform actions"))
+	manager.registerTool(externalToolCommand("satwho", "/usr/bin/satwho", "show which user is being used for authentication"))
+	manager.registerTool(externalToolCommand("satcon-deploy-tree.pl", "/usr/bin/satcon-deploy-tree.pl", "I don't have a clue about this one!"))
+	manager.registerTool(internalToolCommand("newTool", newTool.ProcessNewTool, "new example tool"))
 	return manager
 }

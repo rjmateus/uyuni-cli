@@ -8,6 +8,7 @@ import (
 
 type toolCmd struct{
 	Id  string
+	description string
 	run func()
 }
 
@@ -21,17 +22,17 @@ func (tool toolCmd) Execute() {
 
 // alternative: https://github.com/kataras/i18n
 func (tool *toolCmd) Info() string{
-	return tool.Id
+	return tool.Id + ": " + tool.description
 }
 
 
-func externalToolCommand(id string, execPath string) toolCmd {
-	return toolCmd{Id:id,
+func externalToolCommand(id string, execPath string, desc string) toolCmd {
+	return toolCmd{Id:id, description: desc,
 		run: func() {runCommand(execPath)	}}
 }
 
-func internalToolCommand(id string, ft func()) toolCmd {
-	return toolCmd{Id:id, run: ft}
+func internalToolCommand(id string, ft func(), desc string) toolCmd {
+	return toolCmd{Id:id, description: desc, run: ft}
 }
 
 func runCommand(command string)  {
