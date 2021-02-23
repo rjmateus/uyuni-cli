@@ -2,7 +2,6 @@ package processor
 
 import (
 	"fmt"
-	"github.com/rmateus/uyuni-cli/newTool"
 	"os"
 )
 
@@ -47,8 +46,6 @@ func GetToolsCommandManager() ToolsCommandManager {
 	manager.registerTool(externalToolCommand("spacewalk-debug", "/usr/bin/spacewalk-debug", "export debug information"))
 	manager.registerTool(externalToolCommand("satpasswd", "/usr/bin/satpasswd", "reset user password"))
 	manager.registerTool(externalToolCommand("spacecmd", "/usr/bin/spacecmd", "command line tool to perform actions"))
-	manager.registerTool(externalToolCommand("satwho", "/usr/bin/satwho", "show which user is being used for authentication"))
-	manager.registerTool(externalToolCommand("satcon-deploy-tree.pl", "/usr/bin/satcon-deploy-tree.pl", "I don't have a clue about this one!"))
-	manager.registerTool(internalToolCommand("newTool", newTool.ProcessNewTool, "new example tool"))
+	//manager.registerTool(externalToolCommand("satwho", "/usr/bin/satwho", "show which user is being used for authentication"))
 	return manager
 }

@@ -16,11 +16,6 @@ func (tool toolCmd) Execute() {
 	tool.run()
 }
 
-// internationalization
-// https://pkg.go.dev/github.com/cloudfoundry-attic/jibber_jabber
-// https://phrase.com/blog/posts/internationalization-i18n-go/
-
-// alternative: https://github.com/kataras/i18n
 func (tool *toolCmd) Info() string{
 	return tool.Id + ": " + tool.description
 }
@@ -29,10 +24,6 @@ func (tool *toolCmd) Info() string{
 func externalToolCommand(id string, execPath string, desc string) toolCmd {
 	return toolCmd{Id:id, description: desc,
 		run: func() {runCommand(execPath)	}}
-}
-
-func internalToolCommand(id string, ft func(), desc string) toolCmd {
-	return toolCmd{Id:id, description: desc, run: ft}
 }
 
 func runCommand(command string)  {
