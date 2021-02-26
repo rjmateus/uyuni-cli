@@ -2,9 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/rmateus/uyuni-cli/processor"
 	"os"
+
+	"github.com/rmateus/uyuni-cli/processor"
 )
+
 // https://blog.rapid7.com/2016/08/04/build-a-simple-cli-tool-with-golang/
 
 func main() {
