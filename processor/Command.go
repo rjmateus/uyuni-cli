@@ -6,27 +6,26 @@ import (
 	"os/exec"
 )
 
-type toolCmd struct{
-	Id  string
+type toolCmd struct {
+	Id          string
 	description string
-	run func()
+	run         func()
 }
 
 func (tool toolCmd) Execute() {
 	tool.run()
 }
 
-func (tool *toolCmd) Info() string{
+func (tool *toolCmd) Info() string {
 	return tool.Id + ": " + tool.description
 }
 
-
 func externalToolCommand(id string, execPath string, desc string) toolCmd {
-	return toolCmd{Id:id, description: desc,
-		run: func() {runCommand(execPath)	}}
+	return toolCmd{Id: id, description: desc,
+		run: func() { runCommand(execPath) }}
 }
 
-func runCommand(command string)  {
+func runCommand(command string) {
 	cmd := exec.Command(command, os.Args[2:]...)
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
