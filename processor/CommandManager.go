@@ -14,7 +14,7 @@ Available Command:`
 
 type ToolsCommandManager struct {
 	commandsOrdered []string
-	toolsCommands   map[string]toolCmd
+	toolsCommands   map[string]ToolCmd
 }
 
 func (manager *ToolsCommandManager) Execute(toolsCommandId string) {
@@ -34,13 +34,13 @@ func (manager *ToolsCommandManager) UsagePrint() {
 	}
 }
 
-func (manager *ToolsCommandManager) registerTool(tool toolCmd) {
-	manager.commandsOrdered = append(manager.commandsOrdered, tool.Id)
-	manager.toolsCommands[tool.Id] = tool
+func (manager *ToolsCommandManager) registerTool(tool ToolCmd) {
+	manager.commandsOrdered = append(manager.commandsOrdered, tool.getId())
+	manager.toolsCommands[tool.getId()] = tool
 }
 
 func GetToolsCommandManager() ToolsCommandManager {
-	manager := ToolsCommandManager{make([]string, 0), make(map[string]toolCmd)}
+	manager := ToolsCommandManager{make([]string, 0), make(map[string]ToolCmd)}
 	manager.registerTool(externalToolCommand("spacewalk-sql", "/usr/bin/spacewalk-sql", "execute sql command directly on database", "susemanager-schema"))
 	manager.registerTool(externalToolCommand("spacewalk-repo-sync", "/usr/bin/spacewalk-repo-sync", "start repository synchronization", "spacewalk-backend-tools"))
 	manager.registerTool(externalToolCommand("spacewalk-debug", "/usr/bin/spacewalk-debug", "export debug information", "spacewalk-backend-tools"))
