@@ -1,8 +1,8 @@
 package processor
 
 import (
+	"errors"
 	"fmt"
-	"os"
 )
 
 const (
@@ -17,12 +17,12 @@ type ToolsCommandManager struct {
 	toolsCommands   map[string]ToolCmd
 }
 
-func (manager *ToolsCommandManager) Execute(toolsCommandId string) {
+func (manager *ToolsCommandManager) Execute(toolsCommandId string) error {
 	if value, ok := manager.toolsCommands[toolsCommandId]; ok {
-		value.Execute()
+		return value.Execute()
 	} else {
 		manager.UsagePrint()
-		os.Exit(1)
+		return errors.New("command not found")
 	}
 }
 
