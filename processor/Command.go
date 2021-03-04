@@ -1,7 +1,7 @@
 package processor
 
 type ToolCmd interface {
-	Execute()
+	Execute() error
 	Info() string
 	getId() string
 }
@@ -11,6 +11,6 @@ func externalToolCommand(id string, execPath string, desc string, providePackage
 		execPath: execPath, providePackage: providePackage}
 }
 
-func internalToolCommand(id string, ft func(), desc string) ToolCmd {
+func internalToolCommand(id string, ft func() error, desc string) ToolCmd {
 	return internalToolCmd{id: id, description: desc, run: ft}
 }
