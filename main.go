@@ -34,12 +34,10 @@ func logCommandHistory() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Fprintf(logOutput, "[%s]", time.Now().Format(time.RFC3339))
+	fmt.Fprintf(logOutput, "[%s] ", time.Now().Format(time.RFC3339))
 	defer logOutput.Close()
-	time.Now()
 	for _, arg := range os.Args[1:] {
-		fmt.Fprintf(logOutput, arg+" ")
-		fmt.Print(arg + " ")
+		fmt.Fprintf(logOutput, "%s ", arg)
 	}
 	fmt.Fprintln(logOutput, "")
 }
