@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/rmateus/uyuni-cli/processor"
+	"github.com/rjmateus/uyuni-cli/processor"
 	"log"
 	"os"
 	"os/user"
