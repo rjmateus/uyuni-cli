@@ -30,7 +30,8 @@ func (tool externalToolCmd) Execute() error {
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
-	fmt.Println(cmd.String())
+	// removed since it doesn't exists on go 1.11.13, version used in obs..
+	//fmt.Println(cmd.String())
 	err := cmd.Run()
 	if err != nil {
 		fmt.Println(err)
