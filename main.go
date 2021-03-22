@@ -1,8 +1,11 @@
 package main
 
+//go:generate gotext -srclang=en-US update -out=catalog.go -lang=en,pt,el
 import (
 	"fmt"
 	"github.com/rmateus/uyuni-cli/processor"
+	"golang.org/x/text/language"
+	"golang.org/x/text/message"
 	"log"
 	"os"
 	"os/user"
@@ -12,6 +15,21 @@ import (
 // https://blog.rapid7.com/2016/08/04/build-a-simple-cli-tool-with-golang/
 
 func main() {
+	p := message.NewPrinter(language.Portuguese)
+	p.Printf("Hello world!")
+	p.Println()
+	person := "Alex"
+	place := "Utah"
+	p.Printf("Hello ", person, " in ", place, "!")
+	p.Println()
+
+	p.Printf("sql")
+	p.Println()
+
+	for i := 0; i < 2; i++ {
+		p.Printf(fmt.Sprint("sql", i))
+		p.Println()
+	}
 	manager := processor.GetToolsCommandManager()
 	if len(os.Args) < 2 {
 		manager.UsagePrint()
@@ -23,6 +41,7 @@ func main() {
 	if err != nil {
 		os.Exit(1)
 	}
+	p.Println("Goodbye!!")
 }
 
 func logCommandHistory() {

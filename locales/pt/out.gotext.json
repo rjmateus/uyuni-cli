@@ -1,0 +1,54 @@
+{
+    "language": "pt",
+    "messages": [
+        {
+            "id": "Hello world!",
+            "message": "Hello world!",
+            "translation": "Olá Mundo!"
+        },
+        {
+            "id": "Hello",
+            "message": "Hello",
+            "translation": "Olá",
+            "placeholders": [
+                {
+                    "id": "Person",
+                    "string": "%[1]v",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "person"
+                },
+                {
+                    "id": "_in_",
+                    "string": "%[2]v",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 2,
+                    "expr": "\" in \""
+                },
+                {
+                    "id": "Place",
+                    "string": "%[3]v",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 3,
+                    "expr": "place"
+                },
+                {
+                    "id": "",
+                    "string": "%[4]v",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 4,
+                    "expr": "\"!\""
+                }
+            ]
+        },
+        {
+            "id": "sql",
+            "message": "sql",
+            "translation": ""
+        }
+    ]
+}
