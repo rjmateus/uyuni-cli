@@ -26,8 +26,9 @@ type ToolsCommandManager struct {
 func (manager *ToolsCommandManager) populateExecMap() {
 	commandsMap := make(map[string]*ToolCmd)
 	for _, group := range manager.groups {
-		for _, tool := range group.tools {
-			commandsMap[tool.getId()] = &tool
+		for i, _ := range group.tools {
+			toolPointer := group.tools[i]
+			commandsMap[toolPointer.getId()] = &toolPointer
 		}
 	}
 	manager.toolsCommands = commandsMap
