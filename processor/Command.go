@@ -6,7 +6,7 @@ type ToolCmd interface {
 	getId() string
 }
 
-func externalToolCommand(id string, execPath string, desc string, providePackage string) ToolCmd {
+func externalToolCommand(id string, desc string, execPath string, providePackage string) ToolCmd {
 	return externalToolCmd{id: id, description: desc,
 		execPath: execPath, providePackage: providePackage}
 }
