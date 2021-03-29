@@ -137,7 +137,8 @@ func GetToolsCommandManager() ToolsCommandManager {
 		{
 			name:        "util",
 			description: "Util",
-			tools: []ToolCmd{
+			tools: []ToolCmd{externalToolCommand("spacecmd", "",
+				"/usr/bin/spacecmd", "spacecmd"),
 				externalToolCommand("spacewalk-sql", "",
 					"/usr/bin/spacewalk-sql", "susemanager-schema-4.1.18-411.5.1.devel41.noarch"),
 				externalToolCommand("satpasswd", "",
