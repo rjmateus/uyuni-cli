@@ -1,3 +1,3 @@
 module github.com/rjmateus/uyuni-cli
 
-go 1.11.13
+go 1.12
