@@ -20,15 +20,16 @@ If we need to develop a new tool it can be done inside this project.
 
 One sample tool is available to server as example.
 
-## Install
+# Install
 
-1. On project run `go build -o uyuni`
-2. Copy the build file `uyuni` to your suma/uyuni server
-3. Have fun
+Build Project:
+- https://build.opensuse.org/repositories/home:RDiasMateus:uyuni-cli
 
-## TODO
-- Use internationalization in the tool description
+Repositories: 
+- https://download.opensuse.org/repositories/home:/RDiasMateus:/uyuni-cli/
 
-# DEMO
+1. Add repository for your release 
+   
+`zypper ar https://download.opensuse.org/repositories/home:/RDiasMateus:/uyuni-cli/<RELEASE>/ uyuni-cli`
 
-[![asciicast](https://asciinema.org/a/SrgBVVvoQUklbbbVSbGE3vtod.svg)](https://asciinema.org/a/SrgBVVvoQUklbbbVSbGE3vtod)
+2. To install run:  `zypper in uyuni-cli`
